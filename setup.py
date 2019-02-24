@@ -3,10 +3,11 @@ from setuptools import setup
 # This call to setup() does all the work
 setup(
     name="linelime",
-    version="0.2.1 Beta",
+    version="0.2.2 Beta",
     description="Get Line Timeline Data",
     author="Fadli Maulana M",
     author_email="wetmanz23@gmail.com",
+    url="https://github.com/cacadosman/linelime",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",

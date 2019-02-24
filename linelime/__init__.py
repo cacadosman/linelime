@@ -3,7 +3,7 @@ import requests
 import json
 import time
 
-__version__ = "0.2.1 Beta"
+__version__ = "0.2.2 Beta"
 
 class TimelineConfig:
     URL = "https://timeline.line.me/api/"
