@@ -34,6 +34,11 @@ def get_feed_threading(reader):
     with open ('Draft_SMS_UGM.txt', 'a+', encoding="utf-8") as f:
         f.write(json.dumps(result) + "\n")
 
+def run_threads(threads):
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
 
 page = 1
 while reader.fetch_page():
@@ -41,17 +46,11 @@ while reader.fetch_page():
     while reader.fetch_feed() != None:
         threads.append(threading.Thread(target=get_feed_threading, args=(copy(reader),)))
     if page % 25 == 0:
-        for thread in threads:
-            thread.start()
-        for thread in threads:
-            thread.join()
+        run_threads(threads)
         threads = []
     page += 1
 
-for thread in threads:
-    thread.start()
-for thread in threads:
-    thread.join()
+run_threads(threads)
 
 # Save all data to JSON file after completed
 data = {
