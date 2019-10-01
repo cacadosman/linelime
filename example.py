@@ -1,3 +1,4 @@
+# THIS IS AN EXAMPLE FILE
 # Gathering All Post and Comment from Line Official Account
 
 import linelime
